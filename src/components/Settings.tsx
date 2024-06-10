@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import Modal from './Modal';
 import ThemeSwitcher from './ThemeSwitcher';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGear } from '@fortawesome/free-solid-svg-icons';
 
 const Settings = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -8,7 +10,9 @@ const Settings = () => {
 
   return (
     <div>
-      <button onClick={() => setIsOpen(true)} className="p-2 bg-gray-300 dark:bg-gray-700 rounded">Settings</button>
+      <button onClick={() => setIsOpen(true)} className="p-2 rounded">
+        <FontAwesomeIcon icon={faGear} />
+      </button>
       <Modal isOpen={isOpen} onClose={() => setIsOpen(false)}>
         <div className="flex">
           <ul className="w-1/4 p-4 border-r border-gray-300 dark:border-gray-600">
