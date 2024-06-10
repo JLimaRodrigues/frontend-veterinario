@@ -1,27 +1,23 @@
 import { Link } from 'react-router-dom';
-import ThemeSwitcher from './ThemeSwitcher';
 import { useAuth } from '../context/AuthContext';
+import Settings from './Settings';
 
 function Navbar() {
   const { user, logout } = useAuth();
 
   return (
     <nav className="bg-gray-200 dark:bg-gray-800 p-4 flex justify-between items-center">
-      <div className="text-xl">
-        <Link to="/">Home</Link>
+      <div className="text-xl flex-1 text-center">
+        {user ? `Hello, ${user}` : <Link to="/">Home</Link>}
       </div>
-      <div>
+      <div className="flex items-center space-x-4">
+        <Settings />
         {user ? (
-          <>
-            <span className="mr-4">Hello, {user}</span>
-            <button onClick={logout} className="mr-4">Logout</button>
-          </>
+          <button onClick={logout}>Logout</button>
         ) : (
-          <Link to="/login" className="mr-4">Login</Link>
+          <Link to="/login">Login</Link>
         )}
-        <Link to="/admin">Admin</Link>
       </div>
-      <ThemeSwitcher />
     </nav>
   );
 }

@@ -8,13 +8,15 @@ function ThemeSwitcher() {
     localStorage.setItem('theme', theme)
   }, [theme])
 
+  const handleToggle = () => {
+    setTheme(theme === 'dark' ? 'light' : 'dark')
+  }
+
   return (
-    <button
-      onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-      className="p-2 bg-gray-300 dark:bg-gray-700 rounded"
-    >
-      {theme === 'dark' ? 'Light Mode' : 'Dark Mode'}
-    </button>
+    <label className="switch">
+      <input type="checkbox" checked={theme === 'dark'} onChange={handleToggle} />
+      <span className="slider"></span>
+    </label>
   )
 }
 
