@@ -1,11 +1,13 @@
 import React from 'react';
 import Menu from './Menu';
+import { faUser, faBox, faHandshake } from '@fortawesome/free-solid-svg-icons';
 import logo from '../assets/veterinario.svg';
 
 const Sidebar: React.FC = () => {
   const menus = [
     {
       label: 'Users',
+      icon: faUser,
       subMenus: [
         { label: 'New User', link: '#' },
         { label: 'List Users Active', link: '#' },
@@ -14,6 +16,7 @@ const Sidebar: React.FC = () => {
     },
     {
       label: 'Products',
+      icon: faBox,
       subMenus: [
         { label: 'New Product', link: '#' },
         { label: 'List Products', link: '#' },
@@ -21,6 +24,7 @@ const Sidebar: React.FC = () => {
     },
     {
       label: 'Services',
+      icon: faHandshake,
       subMenus: [
         { label: 'New Service', link: '#' },
         { label: 'List Service', link: '#' },
@@ -35,7 +39,7 @@ const Sidebar: React.FC = () => {
       </div>
       <nav className="flex flex-col p-4">
         {menus.map((menu, index) => (
-          <Menu key={index} label={menu.label} subMenus={menu.subMenus} />
+          <Menu key={index} label={menu.label} icon={menu.icon} subMenus={menu.subMenus} />
         ))}
       </nav>
     </div>

@@ -1,14 +1,16 @@
 import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 import { faChevronDown, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import SubMenu from './SubMenu';
 
 interface MenuProps {
   label: string;
+  icon: IconDefinition;
   subMenus: { label: string; link: string }[];
 }
 
-const Menu: React.FC<MenuProps> = ({ label, subMenus }) => {
+const Menu: React.FC<MenuProps> = ({ label, icon, subMenus }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -21,7 +23,10 @@ const Menu: React.FC<MenuProps> = ({ label, subMenus }) => {
         className="flex justify-between items-center cursor-pointer" 
         onClick={toggleMenu}
       >
-        <span>{label}</span>
+        <div className="flex items-center">
+          <FontAwesomeIcon icon={icon} className="mr-2" />
+          <span>{label}</span>
+        </div>
         <FontAwesomeIcon icon={isOpen ? faChevronDown : faChevronRight} />
       </div>
       {isOpen && (
