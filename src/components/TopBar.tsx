@@ -35,11 +35,7 @@ const Topbar: React.FC = () => {
               onClick={() => setIsSettingsOpen(true)}  
               className="block w-full text-left px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-600"
               >
-              <FontAwesomeIcon icon={faCog} className="mr-2" /> 
-                <Settings 
-                  isOpen={isSettingsOpen}
-                  setIsOpen={setIsSettingsOpen}  
-                  /> Preferences
+              <FontAwesomeIcon icon={faCog} className="mr-2" /> Preferences
             </button>
             <button onClick={logout} className="block w-full text-left px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-600">
               <FontAwesomeIcon icon={faSignOutAlt} className="mr-2" /> Logout
@@ -47,6 +43,10 @@ const Topbar: React.FC = () => {
           </div>
         )}
       </div>
+      <Settings 
+        isOpen={isSettingsOpen}
+        setIsOpen={setIsSettingsOpen}  
+      />
     </div>
   );
 };
