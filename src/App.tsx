@@ -8,8 +8,6 @@ import { AuthProvider } from './context/AuthContext';
 import { ThemeProvider, useTheme } from './context/ThemeContext';
 import ProtectedRoute from './components/ProtectedRoute';
 import { useEffect, useState } from 'react';
-import Sidebar from './components/SideBar';
-import Topbar from './components/TopBar';
 
 function App() {
   const location = useLocation();

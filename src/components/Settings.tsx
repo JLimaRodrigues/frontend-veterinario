@@ -1,18 +1,17 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import Modal from './Modal';
 import ThemeSwitcher from './ThemeSwitcher';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGear } from '@fortawesome/free-solid-svg-icons';
 
-const Settings = () => {
-  const [isOpen, setIsOpen] = useState(false);
+interface SettingsProps {
+  isOpen: boolean;
+  setIsOpen: (isOpen: boolean) => void;
+}
+
+const Settings: React.FC<SettingsProps> = ({ isOpen, setIsOpen }) => {
   const [activeMenu, setActiveMenu] = useState('layout');
 
   return (
-    <div>
-      <button onClick={() => setIsOpen(true)} className="p-2 rounded">
-        <FontAwesomeIcon icon={faGear} />
-      </button>
+    <>
       <Modal isOpen={isOpen} onClose={() => setIsOpen(false)}>
         <div className="flex">
           <ul className="w-1/4 p-4 border-r border-gray-300 dark:border-gray-600">
@@ -37,7 +36,7 @@ const Settings = () => {
           </div>
         </div>
       </Modal>
-    </div>
+    </>
   );
 }
 
