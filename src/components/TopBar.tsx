@@ -5,15 +5,14 @@ import { faHome, faBars, faCog, faSignOutAlt } from '@fortawesome/free-solid-svg
 import { Link } from 'react-router-dom';
 import Settings from './Settings';
 
-const Topbar: React.FC = () => {
+interface TopbarProps {
+  toggleSidebar: () => void;
+}
+
+const Topbar: React.FC<TopbarProps> = ({ toggleSidebar }) => {
   const { logout } = useAuth();
-  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isSettingsOpen, setIsSettingsOpen] = useState(false);
-
-  const toggleSidebar = () => {
-    setIsSidebarOpen(!isSidebarOpen);
-  };
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
