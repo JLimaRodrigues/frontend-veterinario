@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import TopBar from '@/components/Bar/TopBar';
 import SideBar from '@/components/Bar/SideBar';
-import MainContent from '@/components/Contents/MainContent';
+import ProductsContent from '@/components/Contents/ProductsContent';
 
-const Admin: React.FC = () => {
+const Products: React.FC = () => {
     const [isSidebarOpen, setIsSidebarOpen] = useState(true);
 
     const toggleSidebar = () => {
@@ -15,10 +15,10 @@ const Admin: React.FC = () => {
       {isSidebarOpen && <SideBar />}
       <div className="flex flex-col flex-1">
         <TopBar toggleSidebar={toggleSidebar} />
-        <MainContent />
+        <ProductsContent />
       </div>
     </div>
   );
   }
   
-  export default Admin
+  export default Products

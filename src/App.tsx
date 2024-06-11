@@ -3,11 +3,14 @@ import Home from '@/pages/Home';
 import Login from '@/pages/Login';
 import Admin from '@/pages/Admin';
 import Settings from '@/components/Settings';
-import Navbar from '@/components/Navbar';
+import Navbar from '@/components/Bar/Navbar';
 import { AuthProvider } from '@/context/AuthContext';
 import { ThemeProvider, useTheme } from '@/context/ThemeContext';
 import ProtectedRoute from '@/components/ProtectedRoute';
 import { useEffect, useState } from 'react';
+import Users from './pages/Users';
+import Products from './pages/Products';
+import Services from './pages/Services';
 
 function App() {
   const location = useLocation();
@@ -26,6 +29,9 @@ function App() {
       {isAdminPage && (
         <Routes>
           <Route path="/admin" element={<ProtectedRoute><Admin /></ProtectedRoute>} />
+          <Route path="/admin/users" element={<ProtectedRoute><Users /></ProtectedRoute>} />
+          <Route path="/admin/products" element={<ProtectedRoute><Products /></ProtectedRoute>} />
+          <Route path="/admin/services" element={<ProtectedRoute><Services /></ProtectedRoute>} />
           <Route path="/admin/settings" element={<Settings isOpen={false} setIsOpen={() => {}} />} />
         </Routes>
       )}

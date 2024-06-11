@@ -10,7 +10,7 @@ const Sidebar: React.FC = () => {
       icon: faUser,
       subMenus: [
         { label: 'New User', link: '#' },
-        { label: 'List Users Active', link: '#' },
+        { label: 'List Users Active', link: '/admin/users' },
         { label: 'List Users Inactive', link: '#' },
       ],
     },
@@ -19,7 +19,7 @@ const Sidebar: React.FC = () => {
       icon: faBox,
       subMenus: [
         { label: 'New Product', link: '#' },
-        { label: 'List Products', link: '#' },
+        { label: 'List Products', link: '/admin/products' },
       ],
     },
     {
@@ -27,7 +27,7 @@ const Sidebar: React.FC = () => {
       icon: faHandshake,
       subMenus: [
         { label: 'New Service', link: '#' },
-        { label: 'List Service', link: '#' },
+        { label: 'List Service', link: '/admin/services' },
       ],
     },
   ];

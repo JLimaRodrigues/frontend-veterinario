@@ -10,21 +10,23 @@ interface AuthContextType {
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
 export const AuthProvider = ({ children }: { children: ReactNode }) => {
-  const [user, setUser] = useState<string | null>(null);
   const navigate = useNavigate();
 
   const login = (username: string) => {
-    setUser(username);
+    localStorage.setItem('user', username);
     navigate('/admin');
   };
 
   const logout = () => {
-    setUser(null);
+    localStorage.removeItem('user');
     navigate('/login');
   };
 
   return (
-    <AuthContext.Provider value={{ user, login, logout }}>
+    <AuthContext.Provider value={{ 
+      user: localStorage.getItem('user'), 
+      login, 
+      logout }}>
       {children}
     </AuthContext.Provider>
   );
