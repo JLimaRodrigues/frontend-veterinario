@@ -26,7 +26,7 @@ function App() {
       {isAdminPage && (
         <Routes>
           <Route path="/admin" element={<ProtectedRoute><Admin /></ProtectedRoute>} />
-          <Route path="/admin/settings" element={<Settings />} />
+          <Route path="/admin/settings" element={<Settings isOpen={false} setIsOpen={() => {}} />} />
         </Routes>
       )}
       {!isAdminPage && (
