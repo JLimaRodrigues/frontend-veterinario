@@ -1,9 +1,16 @@
+import TopBar from '../components/TopBar';
+import SideBar from '../components/SideBar';
+import MainContent from '../components/MainContent';
+
 function Admin() {
     return (
-      <div className="p-4">
-        <h1 className="text-2xl">Admin Page</h1>
-        <p>Welcome to the admin page!</p>
-      </div>
+        <div className="flex h-screen">
+        <SideBar />
+            <div className="flex flex-col flex-1">
+                <TopBar />
+                <MainContent />
+            </div>
+        </div>
     )
   }
   

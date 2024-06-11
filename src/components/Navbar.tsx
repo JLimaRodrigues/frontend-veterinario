@@ -1,8 +1,9 @@
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import Settings from './Settings';
 
-function Navbar() {
+const Navbar: React.FC = () => {
   const { user, logout } = useAuth();
 
   return (
@@ -20,6 +21,6 @@ function Navbar() {
       </div>
     </nav>
   );
-}
+};
 
 export default Navbar;
