@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import Modal from './Modal';
-import ThemeSwitcher from './ThemeSwitcher';
+import Modal from '@/components/Modal';
+import ThemeSwitcher from '@/components/ThemeSwitcher';
 
 interface SettingsProps {
   isOpen: boolean;

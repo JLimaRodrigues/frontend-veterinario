@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 import { faChevronDown, faChevronRight } from '@fortawesome/free-solid-svg-icons';
-import SubMenu from './SubMenu';
+import SubMenu from '@/components/SubMenu';
 
 interface MenuProps {
   label: string;

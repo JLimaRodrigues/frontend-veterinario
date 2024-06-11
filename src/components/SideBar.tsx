@@ -1,7 +1,7 @@
 import React from 'react';
-import Menu from './Menu';
+import Menu from '@/components/Menu';
 import { faUser, faBox, faHandshake } from '@fortawesome/free-solid-svg-icons';
-import logo from '../assets/veterinario.svg';
+import logo from '@/assets/veterinario.svg';
 
 const Sidebar: React.FC = () => {
   const menus = [

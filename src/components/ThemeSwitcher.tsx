@@ -1,4 +1,4 @@
-import { useTheme } from '../context/ThemeContext';
+import { useTheme } from '@/context/ThemeContext';
 
 function ThemeSwitcher() {
     const { isDarkMode, toggleTheme } = useTheme();

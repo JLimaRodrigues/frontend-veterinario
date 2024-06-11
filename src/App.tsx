@@ -1,12 +1,12 @@
 import { Route, Routes, useLocation } from 'react-router-dom';
-import Home from './pages/Home';
-import Login from './pages/Login';
-import Admin from './pages/Admin';
-import Settings from './components/Settings';
-import Navbar from './components/Navbar';
-import { AuthProvider } from './context/AuthContext';
-import { ThemeProvider, useTheme } from './context/ThemeContext';
-import ProtectedRoute from './components/ProtectedRoute';
+import Home from '@/pages/Home';
+import Login from '@/pages/Login';
+import Admin from '@/pages/Admin';
+import Settings from '@/components/Settings';
+import Navbar from '@/components/Navbar';
+import { AuthProvider } from '@/context/AuthContext';
+import { ThemeProvider, useTheme } from '@/context/ThemeContext';
+import ProtectedRoute from '@/components/ProtectedRoute';
 import { useEffect, useState } from 'react';
 
 function App() {
