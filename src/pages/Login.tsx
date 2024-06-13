@@ -8,7 +8,7 @@ function Login() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    login(email);
+    login(email, password);
   };
 
   return (
