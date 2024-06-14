@@ -139,11 +139,11 @@ const GenericTable = <T,>({ data, columns, itemsPerPage = 10, searchKey }: Table
             <div>
               {Array.from({ length: Math.ceil(filteredData.length / itemsPerPage) }, (_, i) => i + 1).map(pageNumber => (
                 <button
-                  key={pageNumber}
-                  onClick={() => handlePageChange(pageNumber)}
-                  className={`mx-1 px-3 py-1 border rounded ${currentPage === pageNumber ? 'bg-blue-500 text-white' : 'bg-white text-black dark:bg-gray-700 dark:text-gray-200'}`}
+                    key={pageNumber}
+                    onClick={() => handlePageChange(pageNumber)}
+                    className={`mx-1 px-3 py-1 border rounded-full shadow-md ${currentPage === pageNumber ? 'bg-blue-500 text-white' : 'bg-white text-black dark:bg-gray-700 dark:text-gray-200'}`}
                 >
-                  {pageNumber}
+                    {pageNumber}
                 </button>
               ))}
             </div>
