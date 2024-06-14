@@ -9,7 +9,7 @@ const Sidebar: React.FC = () => {
       label: 'Users',
       icon: faUser,
       subMenus: [
-        { label: 'New User', link: '#' },
+        { label: 'New User', link: '/admin/users/new' },
         { label: 'List Users Active', link: '/admin/users' },
         { label: 'List Users Inactive', link: '#' },
       ],

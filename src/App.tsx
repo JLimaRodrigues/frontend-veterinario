@@ -11,6 +11,7 @@ import { useEffect, useState } from 'react';
 import Users from './pages/Users';
 import Products from './pages/Products';
 import Services from './pages/Services';
+import NewUser from './pages/NewUser';
 
 function App() {
   const location = useLocation();
@@ -30,6 +31,7 @@ function App() {
         <Routes>
           <Route path="/admin" element={<ProtectedRoute><Admin /></ProtectedRoute>} />
           <Route path="/admin/users" element={<ProtectedRoute><Users /></ProtectedRoute>} />
+          <Route path="/admin/users/new" element={<ProtectedRoute><NewUser /></ProtectedRoute>} />
           <Route path="/admin/products" element={<ProtectedRoute><Products /></ProtectedRoute>} />
           <Route path="/admin/services" element={<ProtectedRoute><Services /></ProtectedRoute>} />
           <Route path="/admin/settings" element={<Settings isOpen={false} setIsOpen={() => {}} />} />
