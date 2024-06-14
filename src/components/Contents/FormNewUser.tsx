@@ -121,7 +121,7 @@ const FormNewUser: React.FC = () => {
                 type="submit"
                 className="mt-6 w-full rounded bg-primary py-3 font-medium text-gray-100 hover:bg-opacity-90"
               >
-                Sign Up
+                Register
               </button>
             </form>
           </div>
