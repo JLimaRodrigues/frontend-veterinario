@@ -23,16 +23,12 @@ const GenericTable = <T,>({ data, columns, itemsPerPage = 10, searchKey }: Table
     const [expandedRows, setExpandedRows] = useState<Set<number>>(new Set());
 
     useEffect(() => {
-        if(searchKey){
-            const results = data.filter(item => {
-                String(item[searchKey]).toLowerCase().includes(searchTerm.toLowerCase())
-            });
-            setFilteredData(results);
-        } else {
-            setFilteredData(data)
-        }
-    }, [searchTerm, data, searchKey]);
-
+        const results = data.filter(item =>
+          String(item[searchKey]).toLowerCase().includes(searchTerm.toLowerCase())
+        );
+        setFilteredData(results);
+      }, [searchTerm, data, searchKey]);
+    
     useEffect(() => {
         setFilteredData(data);
     }, [data]);
