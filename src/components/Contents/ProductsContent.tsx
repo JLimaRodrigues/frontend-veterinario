@@ -4,7 +4,7 @@ import GenericTable, { Column } from '@/components/GenericsTable';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEdit, faTrash } from '@fortawesome/free-solid-svg-icons';
 
-interface ImagesProducts {
+export interface ImagesProducts {
   id: number;
   path: string;
 }
@@ -37,14 +37,11 @@ const ProductsContent: React.FC = () => {
 
   const handleEdit = (id: string) => {
     console.log('Edit product with id:', id);
-    // Lógica para editar o produto
-    // Você pode redirecionar para uma página de edição ou abrir um modal
   };
 
   const handleDelete = async (id: string) => {
     try {
       console.log('Delete product with id:', id);
-      // Lógica para excluir o produto
       await axios.delete(`http://localhost:8080/api/products/${id}`);
       setProducts(products.filter(product => product.id !== id));
     } catch (error) {

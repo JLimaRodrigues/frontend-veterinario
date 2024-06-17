@@ -18,7 +18,7 @@ const Sidebar: React.FC = () => {
       label: 'Products',
       icon: faBox,
       subMenus: [
-        { label: 'New Product', link: '#' },
+        { label: 'New Product', link: '/admin/products/new' },
         { label: 'List Products', link: '/admin/products' },
       ],
     },

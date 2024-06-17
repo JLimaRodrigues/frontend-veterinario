@@ -23,7 +23,7 @@ const schema = yup.object().shape({
       .matches(/[@$!%*?&#]/, 'Password must contain at least one special character')
       .required('Password is required'),
     confirmPassword: yup.string()
-      .oneOf([yup.ref('password')], 'Passwords must match') // Removido 'null' daqui
+      .oneOf([yup.ref('password')], 'Passwords must match')
       .required('Confirm password is required'),
   });
 
